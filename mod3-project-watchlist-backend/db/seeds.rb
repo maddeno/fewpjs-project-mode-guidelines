@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Watchlist.delete_all
+Viewer.delete_all
+Movie.delete_all
+
+10.times do
+    Viewer.create(username: Faker::Name.first_name)
+end
