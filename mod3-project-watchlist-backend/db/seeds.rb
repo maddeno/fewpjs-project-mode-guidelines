@@ -1,3 +1,4 @@
+
 # # This file should contain all the record creation needed to seed the database with its default values.
 # # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 # #
@@ -6,16 +7,6 @@
 # #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # #   Character.create(name: 'Luke', movie: movies.first)
 
-
-
-
-
-
-# t.string :title
-# t.string :release
-# t.string :director
-# t.string :image_url
-# t.string :genre
 
 movie_one = Movie.create(title: "Once Upon A Time in Hollywood",release: "2019", director: "Quentin Tarantino" ,image_url: "https://m.media-amazon.com/images/M/MV5BOTg4ZTNkZmUtMzNlZi00YmFjLTk1MmUtNWQwNTM0YjcyNTNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UX182_CR0,0,182,268_AL_.jpg", genre: "Drama", description:"A faded television actor and his stunt double strive to achieve fame and success in the film industry during the final years of Hollywood's Golden Age in 1969 Los Angeles.")
 movie_two= Movie.create(title: "Uncut Gems",release: "2019", director:"Benny Safdie, Josh Safdie" ,image_url: "https://m.media-amazon.com/images/M/MV5BZDhkMjUyYjItYWVkYi00YTM5LWE4MGEtY2FlMjA3OThlYmZhXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_UX182_CR0,0,182,268_AL_.jpg", genre: "Action", description:"With his debts mounting and angry collectors closing in, a fast-talking New York City jeweler risks everything in hope of staying afloat and alive.")
@@ -36,3 +27,20 @@ movie_fifteen = Movie.create(title: "A Quiet Place Part II",release: "2020", dir
 movie_sixteen = Movie.create(title: "Run",release: "2020", director: "Aneesh Chaganty" ,image_url: "https://m.media-amazon.com/images/M/MV5BYzQ2MDdiMDEtNmYyMC00N2NmLWFiZjAtZDYwMzMzY2VhZDM1XkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SY1000_SX675_AL_.jpg", genre:"Horror" ,description: "A homeschooled teenager begins to suspect her mother is keeping a dark secret from her.")
 movie_seventeen = Movie.create(title: "Emma",release: "2019", director: "Autumn de Wilde" ,image_url: "https://m.media-amazon.com/images/M/MV5BOGRiODEzM2QtOTUyYi00MWRlLTg4MzMtZGI0YmUzNWUyMjQ0XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_UX182_CR0,0,182,268_AL_.jpg", genre:"Drama" ,description: "In 1800s England, a well meaning but selfish young woman meddles in the love lives of her friends.")
 movie_eighteen = Movie.create(title: "Joker",release: "2019", director: "Todd Phillips" ,image_url: "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg", genre:"Drama" ,description: "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.")
+
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+
+Watchlist.delete_all
+Viewer.delete_all
+Movie.delete_all
+
+10.times do
+    Viewer.create(username: Faker::Name.first_name)
+end
+
